@@ -106,11 +106,12 @@ p{margin:0;}
 .lecture-left .badge{margin-bottom:16px;}
 .lecture-left h2{margin-bottom:10px;}
 .lecture-left .lead{font-size:15.5px;}
-.lecture-right{display:flex; flex-direction:column; gap:14px;}
-.lrow{background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); padding:18px 20px; box-shadow:var(--shadow-sm);}
+.lecture-right{display:flex; flex-direction:column; gap:10px;}
+.lrow{background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); padding:14px 18px; box-shadow:var(--shadow-sm);}
 .lrow .lab{font-size:11.5px; font-weight:700; letter-spacing:.1em; color:var(--accent); margin-bottom:8px; display:block;}
-.lrow ul{margin:0; padding-left:18px; color:var(--sub); font-size:14px; line-height:1.75;}
+.lrow ul{margin:0; padding-left:18px; color:var(--sub); font-size:14px; line-height:1.6;}
 .lrow p.val{color:var(--ink); font-size:14.5px; font-weight:600;}
+.lrow p.summary{color:var(--ink); font-size:16px; font-weight:500; line-height:1.6;}
 .time-chip{display:inline-block; margin-top:14px; background:var(--bg-soft); color:var(--sub); font-size:12.5px; font-weight:700; padding:6px 14px; border-radius:var(--pill);}
 @media(max-width:820px){ .lecture{grid-template-columns:1fr;} }
 
@@ -170,13 +171,13 @@ const DECK = {
   },
   "aim": {
     "eyebrow": "狙い",
-    "heading": "知って終わりにしない。",
+    "heading": "講座全体の狙い",
+    "lead": "AI初心者が「知識として理解する」だけで終わらず、実際にツールを触り、安全に使い、最終的には組織での活用まで進めることをゴールとする。",
     "cards": [
       { "title": "知る", "text": "最新AIが何をできるかを、地図で理解する。" },
       { "title": "使う", "text": "実際にツールを触り、安全に使う。" },
       { "title": "広げる", "text": "自分の仕事、そして組織全体の活用まで進める。" }
-    ],
-    "note": "ゴール：受講者が自分の業務で1つ、AIを使った成果を出し、社内に説明できる状態。"
+    ]
   },
   "map": {
     "eyebrow": "全体マップ",
@@ -191,6 +192,7 @@ const DECK = {
   "lectures": [
     {
       "n": "第1回", "stage": "第1段階", "stageClass": "learn",
+      "summary": "ChatGPTのAstraがどんなモデルなのか、従来モデルとの違いや特徴を解説。ChatGPT WorkやCodexなど、AIエージェント型の機能でAstraがどう活用されるのかを、具体的な利用シーンとともに紹介する。「何がすごいのか」だけでなく、「自分の仕事でどう使えるのか」まで理解し、実際にChatGPT WorkやCodexを使い始めることを目指す。",
       "title": "ChatGPT Astraとは？AIエージェント時代の新モデルを理解しよう",
       "tagline": "何がすごいかより、自分の仕事でどう使えるか。",
       "learn": [
@@ -204,6 +206,7 @@ const DECK = {
     },
     {
       "n": "第2回", "stage": "第2段階", "stageClass": "code",
+      "summary": "CodexやClaude Codeなどを使えば、非エンジニアでもWebサービスや社内ツールを作れる時代。一方で、ハッキング対策などの技術的セキュリティに加え、「どの社内データにアクセスさせてよいか」「個人情報を扱ってよいか」といった社内ルール・業界ルールへの対応も必要になる。AIにセキュリティ対策を指示する方法と、会社として確認すべきポイントを最低限理解する。",
       "title": "AIで作ったWebアプリは安全？初心者が知るべきセキュリティ対策",
       "tagline": "作れる時代だからこそ、守り方を知る。",
       "learn": [
@@ -217,6 +220,7 @@ const DECK = {
     },
     {
       "n": "第3回", "stage": "第3段階", "stageClass": "cowork",
+      "summary": "Astraを頻繁に使うと、想像以上にトークンを消費することがある。そこで、無駄なトークン消費を減らすプロンプトの作り方、会話やタスクの分け方、モデルやツールの使い分けなどを解説。利用量を抑えながら、Astraを実務で継続的に使う方法を学ぶ。",
       "title": "Astraを使い倒すためのトークン節約テクニック",
       "tagline": "使い続けられる使い方。",
       "learn": [
@@ -230,6 +234,7 @@ const DECK = {
     },
     {
       "n": "第4回", "stage": "第2段階", "stageClass": "code",
+      "summary": "AI利用で特に注意が必要な個人情報・機密情報について解説。医療、自治体など、情報管理が厳しい業界を例に、「どんな情報ならAIに入力してよいのか」「どこからが危険なのか」を整理する。クラウド型AIとローカルLLMの違いなども紹介し、業務でAIを使う際の情報管理の基本を身につける。",
       "title": "AIに個人情報を入れていい？業界別に考える情報漏えい対策",
       "tagline": "どこまで入れてよく、どこからが危険か。",
       "learn": [
@@ -243,6 +248,7 @@ const DECK = {
     },
     {
       "n": "第5回", "stage": "第3段階", "stageClass": "cowork",
+      "summary": "Claude Coworkで利用できる便利なプラグインや連携機能を紹介。単体で使うだけではなく、外部サービスや業務ツールと組み合わせることで、どんな業務を効率化・自動化できるのかを具体例で解説する。受講後すぐに、自分の業務に合ったプラグインを試せる状態を目指す。",
       "title": "Claude Coworkをもっと便利にするプラグイン活用術",
       "tagline": "つなげると、仕事が自動で回る。",
       "learn": [
@@ -256,6 +262,7 @@ const DECK = {
     },
     {
       "n": "第6回", "stage": "第3段階", "stageClass": "cowork",
+      "summary": "ChatGPTの音声会話機能を、実際の利用シーンを交えながら解説。アイデア出し、相談、文章作成、移動中の壁打ちなど、「キーボードを使わずにAIを仕事に使う」具体的な方法を紹介する。どんな場面で音声AIが便利なのかを理解し、日常業務で使えるようにする。",
       "title": "ChatGPTアドバンスドボイスモード実践入門",
       "tagline": "キーボードを使わずにAIを仕事に使う。",
       "learn": [
@@ -269,7 +276,8 @@ const DECK = {
     },
     {
       "n": "第7回", "stage": "第4段階", "stageClass": "rest",
-      "title": "社内にAIを定着させる方法",
+      "summary": "AIツールを導入しても、社員が実際に使わなければ生産性は上がらない。人間は変化を嫌うという前提に立ち、AIに抵抗感がある社員も含めて、会社全体でAI利用率を高める方法を解説する。経営方針、教育、ルール作り、成功事例の共有などを通じて、AIを「一部の人だけが使うツール」から「組織の標準」に変えていく方法を学ぶ。",
+      "title": "社内にAIを定着させる方法 ― ツールを配るだけでは使われない",
       "tagline": "ツールを配るだけでは使われない。",
       "learn": [
         "人は変化を嫌う前提で、抵抗感のある社員も含めて利用率を上げる方法",
@@ -372,8 +380,8 @@ const DECK = {
       '<section class="section slide' + softClass() + '"><div class="wrap">' +
         pageNoHtml() +
         '<div class="sec-head"><span class="eyebrow">' + esc(deck.aim.eyebrow) + '</span><h2>' + esc(deck.aim.heading) + '</h2></div>' +
+        '<p class="lead" style="font-size:24px; margin:0 0 28px;">' + esc(deck.aim.lead) + '</p>' +
         '<div class="card-grid">' + cards + '</div>' +
-        '<div class="note tip">' + esc(deck.aim.note) + '</div>' +
       '</div></section>'
     );
   })();
@@ -411,6 +419,7 @@ const DECK = {
             '<p class="lead">' + esc(l.tagline) + '</p>' +
           '</div>' +
           '<div class="lecture-right">' +
+            '<div class="lrow"><span class="lab">企画書の内容</span><p class="summary">' + esc(l.summary) + '</p></div>' +
             '<div class="lrow"><span class="lab">学ぶこと</span><ul>' + learnItems + '</ul></div>' +
             '<div class="lrow"><span class="lab">動画のゴール</span><p class="val">' + esc(l.goal) + '</p></div>' +
             '<div class="lrow"><span class="lab">持ち帰る成果物</span><p class="val">' + esc(l.output) + '</p></div>' +
